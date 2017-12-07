@@ -48,6 +48,7 @@ all:	$(TARGETS)
 clean:
 	rm -f $(TARGETS) *~ *.o *.so
 
-.PHONY: install
+debug:
+	qemu-system-x86_64 -bios OVMF.fd -drive file=fat:rw:./
 
 include $(SRCDIR)/Make.rules
